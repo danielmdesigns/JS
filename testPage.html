@@ -7,24 +7,13 @@
 <body>
 <script>
 
-function doubleMax(x, y) {
-  // add the correct function call after the '+' operator
-  return 2 * getMaxnum(4,3);
-};
-
-// call me for help!
-function getMaxnum(n1, n2) {
-    if (n1 < n2) {
-      return n2;
-    }
-    else {
-      return n1; 
-    }
-};
-
-getMaxnum(5,5);
-doubleMax(2,2);
-
+ var spareWords = ["The","chimney","sweep's","dog"];
+      var saying = ["quick", "brown", "fox", "jumps", "over", "the", "lazy"];
+      var firstWord = spareWords.shift();
+      var lastWord = spareWords.pop();
+      saying = firstWord.unshift();
+      saying;
+	  
 </script>
 </body>
 </html>
