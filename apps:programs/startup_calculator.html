@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Startup Calc Game</title>
+</head>
+<script>
+//Start by defining the function.
+var salary = ""
+var numWorkers = "" 
+
+//Start by defining the function.
+function calculateTotalCosts (salary , numWorkers, city) {
+var fixedCosts = 5000;
+var variableCosts = salary * numWorkers;
+//return (city==="NYC") ? (fixedCosts + variableCosts + 30000) : (fixedCosts + variableCosts);
+switch(city){
+	case "NYC":
+		return (fixedCosts + variableCosts + 30000);
+	break;
+	
+	case "BEJ":
+		return (fixedCosts + variableCosts + 25000);
+	break;
+
+	default:
+		return (fixedCosts + variableCosts + 10000);
+	}
+}
+document.write(calculateTotalCosts (40000, 3, "BEJ"));
+
+</script>
+<body>
+</body>
+</html>
