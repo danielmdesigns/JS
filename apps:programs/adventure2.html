@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<script>
+var user = prompt("Who's your favorite AFC East team?","Put your answer here").toUpperCase();
+
+switch(user){
+case "NYJ":
+    if ( user === "NYJ" || "NE") {
+        console.log("Who wins division?")   
+    } else {
+        console.log ("boring...");
+    }
+     console.log("New York Jets");
+     break;
+case "NE":
+    if ( user === "NYJ" && "NE") {
+        console.log("Who wins division?");
+    } else {
+        console.log("wagon jumper!");
+    }
+    console.log("New England Patriots");
+    break;
+case "BUF":
+    console.log("Buffalo Bills");
+    break;
+case "MIA":
+    console.log("Miami Dolphins")
+    break;
+default:
+    console.log("Another team")
+    break;
+}
+</script>
+<body>
+</body>
+</html>
