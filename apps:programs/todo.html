@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Todo App</title>
+</head>
+
+<body>
+
+<h1>Test</h1>
+<button onclick="addTodo()">Add Item</button>
+<button onClick="removeTodo()">Remove Item</button>
+<br><br>
+<div id="todoList"></div>
+
+<script>
+	
+var todo = ["eggs", "milk", "cheese"];
+var todoElement = document.getElementById("todoList");
+
+var loadTodo = function(){
+	todoElement.innerHTML = "";
+	for(var i = 0; i < todo.length; i++){
+		todoElement.innerHTML += i+1 + ". " + todo[i] + "<br/>";
+	}
+};
+
+var addTodo = function(){
+	var todoItem = prompt("Add your item!");
+	todo.push(todoItem);
+	loadTodo();
+}
+
+var removeTodo = function(){
+	var todoItemErase = prompt("What # to remove?");
+	todo.splice(todoItemErase-1,1);
+	loadTodo();
+}
+
+loadTodo();
+
+</script>
+</body>
+</html>
