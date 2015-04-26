@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Black Jack - Hit Me</title>
+</head>
+
+<body>
+<script>
+function Card(s,n) {
+        var number = n;
+        var suit = s;
+        //getters
+        this.getNumber = function(){
+                return number;
+        };
+        this.getSuit = function(){
+                return suit;
+        };
+        this.getValue = function(){
+            if(number===11 || number===12 || number===13){
+                return 10;
+            } else if(number===1){
+                return 11;
+            } else{
+                return number;
+            }
+        };
+}
+var deal = function(){
+        var randNum = Math.floor(Math.random() * 13) + 1;
+        var randSuit = Math.floor(Math.random() * 4) + 1;
+        //the card
+        return new Card(randSuit, randNum);
+};
+function Hand(){
+    this.card1 = deal();
+    this.card2 = deal();
+    this.score = function(){
+        var score1=this.card1.getValue();
+        var score2=this.card2.getValue();
+        return score1+score2;
+    };
+}
+</script>
+</body>
+</html>
