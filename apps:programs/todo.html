@@ -14,10 +14,12 @@
 <div id="todoList"></div>
 
 <script>
-	
-var todo = ["eggs", "milk", "cheese"];
+//user inputs stored here
+var todo = [];
+//we store those inputs into the empty div in the HTML
 var todoElement = document.getElementById("todoList");
 
+//this function adds to the todo list, adding a # next to the input
 var loadTodo = function(){
 	todoElement.innerHTML = "";
 	for(var i = 0; i < todo.length; i++){
@@ -25,12 +27,14 @@ var loadTodo = function(){
 	}
 };
 
+//user item is "pushed" into the todo variable/array
 var addTodo = function(){
 	var todoItem = prompt("Add your item!");
 	todo.push(todoItem);
 	loadTodo();
 }
 
+//this removes item from the todo var/array
 var removeTodo = function(){
 	var todoItemErase = prompt("What # to remove?");
 	todo.splice(todoItemErase-1,1);
