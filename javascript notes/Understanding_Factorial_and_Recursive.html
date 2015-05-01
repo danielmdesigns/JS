@@ -23,10 +23,12 @@ function factorialA(num)
         return 1;
     }
     var tmp = num;
-	// 
+	//if number is greater than 2, - 1 and multiply that number by the previous number
+	//ex: if 4 > 2 (true) then take away 1, -1, to = 3 x num
     while (num-- > 2) {
         tmp *= num;
     }
+	//when the condition is no longer true, return tmp!
     return tmp;
 }
 
@@ -54,7 +56,7 @@ function factorialB(num)
     else if (num == 0) {
         return 1;
     }
-    // Otherwise, call this recursive procedure again.
+    // Otherwise, call this recursive procedure again by calling itself.
     else {
         return (num * factorialB(num - 1));
     }
