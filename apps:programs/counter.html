@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Counter</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+body {
+  font-family: helvetica, arial, verdana, sans-serif;
+  background-image: linear-gradient(to right, #eb4d55, #f49ca3);: #eb4d55;
+}
+
+.container {
+	margin:0 auto;
+	margin-top:25%;
+}
+
+input {
+  font-size: 2.4em;
+  background-color: transparent;
+  text-align: center;
+  border-width: 0;
+  width: 100%;
+  margin: 0 0 .1em 0;
+  color: #fff;
+}
+
+label {
+  display: block;
+  font-size: .8em;
+}
+
+button {
+  /* basics */
+  color: #000;
+  background-color: #FFF;
+  font-size:.75em;
+  padding:20px;
+  width:40%;
+  /* rounded corners */
+  border-color:pink;
+  -webkit-border-radius: 6px;
+  border:1px solid pink;
+
+}
+
+button:hover, button:active, button:focus {
+  background-color: #ffecee;
+}
+
+.box {
+  /* basics */
+  background-image: linear-gradient(to right, #f49ca3, #eb4d55);: #eb4d55;
+  color: #FFF;
+  font-size:1.5em;
+  text-align: center;
+
+  /* rounded corners */
+  border:10px solid pink;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; 
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+  padding: .8em .8em 1em;
+  width: 8em;
+  margin: 0 auto;	
+  -webkit-box-shadow: 0px 0px 12px 0px #666;
+  box-shadow: 0px 0px 12px 0px #000;
+
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+<div class="box">
+  <label for="qty"><abbr title="Quantity">Qty</abbr></label>
+  <input id="qty" value="0" />
+  <button id="down" onclick="modify_qty(-1)">-1</button>
+  <button id="up" onclick="modify_qty(1)">+1</button>
+</div>
+</div>
+
+<script type="text/javascript">
+function modify_qty(val) {
+  var qty = document.getElementById('qty').value;
+  var new_qty = parseInt(qty,10) + val;
+  
+  if (new_qty < 0) {
+	  new_qty = 0;
+  }
+  
+  document.getElementById('qty').value = new_qty;
+  return new_qty;
+}
+</script>
+</body>
+</html>
