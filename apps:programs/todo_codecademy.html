@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>@codecademy todo app course</title>
+<style type="text/css">
+.checked-off {
+    text-decoration:line-through;
+}
+</style>
+</head>
+
+<body>
+
+<form name="myCheckListForm">
+  <input type="text" name="checklistItem">
+  <input type="button" value="Add to List" onclick="processForm()">
+</form>
+<!-- empty div that will show users added list item-->
+<div id="checkList"></div>
+
+<script type="text/javascript">
+//var i is our counter, to add new item
+var i = 0;
+
+function processForm() {
+  //incrementing our counter, so a new item can be added	
+  i++;
+  //whatever user submitted, get's stored in the listItem var
+  var listItem = document.myCheckListForm.checklistItem.value;
+  //adding a new div w/ the users submitted item w/ a checkbox next to it
+  var listed = '<div id="item' + i + '"><input type="checkbox" onclick="crossedOut(\'item'+ i + '\')" />' + listItem + '</div>';
+  //printing the "listed" var to the empty checklist div
+  document.getElementById("checkList").innerHTML += listed;
+}
+
+//this will cross out any check'd items
+function crossedOut(item) {
+  document.getElementById(item).className = "checked-off";
+}
+</script>
+</body>
+</html>
