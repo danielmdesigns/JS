@@ -7,68 +7,43 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <!-- You may have noticed that there isn’t a leading http within Google CDN reference example above. The http has been omitted intentionally to allow for both http and https connections. When working locally, without the benefit of a web server, the leading http will need to be included to prevent attempting to locate the file on the systems local disk drive. -->
 <style type="text/css">
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+.red{
+	background-color:red;
+	padding:5px;
+	width:10%;
+}
 </style>
 </head>
 
 <body>
 <!-- my HTML code goes here -->
+<ul>
+  <a href="#"><li>Link</li></a>
+  <a href="#"><li>Link</li></a>
+  <a href="#"><li>Link</li></a>
+</ul>
+
 <h1>Alt attr added using jQuery</h1>
 <img src="http://library.sandiegozoo.org/factsheets/red_kangaroo/images/red_kangaroo.jp" />
 
 <script type="text/javascript">
-<!-- jQuery Object -->
-//  $(); is the same as jQuery();
+//added alt tag to my img, and img link is broken
+$(document).ready(function(){
+	$('img').attr('alt', 'Wild Kangaroo Photo');
+});
 
-<!-- gaurantee's that no jQuery will be executed until the DOM is ready, first! -->
-//  $(document).ready(function(event){
-	  //jQuery code
-//  });
-
-<!-- selectors -->
-//  $('.feature');            //class selector
-//  $('li strong');           //descendant selector
-//  $('em, i');               //multiple selector
-//  $('a[target="_blank"]');  //attribute selctor
-//  $('p:nth-child(2)');      //pseudo-class selctor
-
-<!-- this, selection keyword -->
-//selects the element referenced inside the original selector
-// $('div').click(function(){
-//		$(this);  <-- same as $('div');
-//	});
-
-<!-- traversing -->
-//moving through the DOM to use and/or select elements based on their relationship to other elements
-
-// $('div').not('type, .collection');
-
-// example: selection finds all of the <div> elements in the DOM, which are then filtered using the .not() method. this specific method, selects all of the <div> elements w/ out a .type or .collection class
-
-<!-- chaining methods -->
-// $('div').not('.type, .collection').parent();
-
-//methods combined together, this will only select the parent elements inside of the <div> elements w/ out a class of .type or .collection
-
-<!-- getting & setting -->
-//gets the vaule of the alt attribute
-// $('img').attr('alt');
-
-//sets the value of the alt attribute to the <img> photo
-$('img').attr('alt', 'Wild kangaroo');
-
-<!-- attr manipulation methods -->
-// 1) .addClass() -- will add a class
-// 2) .prop() -- will get property
-// 3) .removeProp() -- removes properties set by the .prop() method
-// 4) .attr() -- gets/sets attribue
-// 5) .removeAttr() -- removes attribute
-// 6) .toggleClass -- 
-// 7) .hasClass() -- selects elements that have "this" class
-// 8) .removeClass() -- removes the class
-// 9) .val -- gets the current vaule
-
-
-
+//hover effect
+$(document).ready(function(){
+	$('li').hover(function(){
+		$(this).toggleClass("red");
+	});
+});
 </script>
 </body>
 </html>
