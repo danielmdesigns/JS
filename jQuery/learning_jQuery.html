@@ -32,6 +32,9 @@ a:hover {
 <h1>Alt attr added using jQuery</h1>
 <img src="http://library.sandiegozoo.org/factsheets/red_kangaroo/images/red_kangaroo.jp" />
 
+<br><br>
+<button>My Button</button>
+
 <script type="text/javascript">
 //added alt tag to my img, and img link is broken
 $(document).ready(function(){
@@ -42,6 +45,13 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('li').hover(function(){
 		$(this).toggleClass("red");
+	});
+});
+
+//text changed when button is clicked
+$(document).ready(function(){
+	$('button').click(function(){
+		$(this).text('changed');
 	});
 });
 </script>
