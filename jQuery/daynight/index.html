@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>30 Days to Learn jQuery</title>
+<link rel="stylesheet" href="day.css">
+<style>
+</style>
+</head>
+
+<body>
+
+<h1>BG Color Change</h1>
+<button data-file="day">Day</button>
+<button data-file="night">Night</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+/* Option A-
+(function(){
+  $('button').click(function(){
+	  var stylesheet = $(this).text().toLowerCase();
+	  $('link').attr('href', stylesheet + '.css');
+  });
+})(); */
+
+/* Option B-
+(function(){
+  var $link = $('link');
+  $('button').click(function(){
+	  var $this = $(this);
+	  var stylesheet = $this.data('file');
+	  $this.siblings('button').removeAttr('disabled');
+	  $link.attr('href', stylesheet + '.css');
+	  $this.attr('disabled', 'disabled');
+  });
+})(); */
+
+/* Option C -*/
+(function(){
+  var $link = $('link');
+  $('button').on('click', function(){
+	  var $this = $(this),
+	  	  $stylesheet = $this.data('file');
+		  
+	  $link.attr('href', $stylesheet + '.css');
+		  
+	  $this
+	  	.siblings('button')
+		.removeAttr('disabled')
+		.end()
+	  	.attr('disabled', 'disabled');
+  });
+})();
+</script>
+</body>
+</html>
