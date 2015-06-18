@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+</head>
+<style>
+.myStyle {
+  padding: 20px;
+  background-color: green;
+  color: white;
+}
+p{
+  margin-bottom:50px;
+}
+</style>
+<body>
+<p><br/>
+<p>
+ going to launch a website site using jQuery w/ out using a href in my HTML or CSS. Also, need to append a key:value at the end of the URL
+</p>
+
+ <a class="myStyle myFunc">NFL.com</a>
+<script>
+$(".myStyle").click(function() {
+  var appendMe = "";
+  if ($(this).hasClass("myFunc")) {
+    appendMe = "?iWorked";
+  }
+  window.location.href = "http://www.nfl.com" + appendMe;
+});
+</script>
+</body>
+</html>
