@@ -1,0 +1,32 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+      <script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+            $("#results").click(function(){
+               $('#stage').load('results.html');
+            });
+         });
+		 $(document).ready(function() {
+            $("#again").click(function(){
+               $('#stage').load('again.html');
+            });
+         });
+      </script>
+		
+   </head>
+   <body>
+	
+      <p>Loading my first AJAX request =)</p>
+		
+      <div id="stage" style="padding:20px;">
+         Will it work?
+      </div>
+		
+      <input type="button" id="results" value="Result!" />
+      <input type="button" id="again" value="Again" />
+		
+   </body>
+</html>
