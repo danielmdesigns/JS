@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Guessing Game w/ Hints</title>
+<style>
+*{font-family:sans-serif;}
+</style>
+</head>
+<script>
+var counter = 0;
+var randomNum = Math.ceil(Math.random()*10);
+//test --> alert(randomNum);
+
+do{
+    //do continue to ask me...
+	var guess = prompt("Pick a number, between 1 & 10");
+	
+	//add 1, everytime user makes a guess
+	counter++;
+	
+	//hints
+    if(guess > randomNum){
+    	alert("lower");
+    }else if(guess < randomNum){
+        alert("higher");
+    }else{
+    	alert("correct!");
+    }
+	
+	//as long as, guess != randomNum
+}while(guess != randomNum);
+</script>
+<body>
+<h1>Guess my number game</h1>
+<script>document.write("it took " + counter + " try(s).");</script>
+</body>
+</html>
