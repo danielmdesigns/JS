@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Basic Quiz - Code Logic Test</title>
+</head>
+
+<body>
+
+<h3>Question #1:</h3>
+<input type="radio" name="q1" id="a1" value="">
+    <label>A</label>
+<input type="radio" name="q1" id="b1" value="">
+    <label>B</label>
+<input type="radio" name="q1" id="c1" value="">
+    <label>C</label>
+<input type="radio" name="q1" id="d1" value="">
+    <label>D</label>
+    
+<h3>Question #2:</h3>
+<input type="radio" name="q2" id="a2" value="">
+    <label>A</label>
+<input type="radio" name="q2" id="b2" value="">
+    <label>B</label>
+<input type="radio" name="q2" id="c2" value="">
+    <label>C</label>
+<input type="radio" name="q2" id="d2" value="">
+    <label>D</label>
+    
+<h3>Question #3:</h3>
+<input type="radio" name="q3" id="a3" value="">
+    <label>A</label>
+<input type="radio" name="q3" id="b3" value="">
+    <label>B</label>
+<input type="radio" name="q3" id="c3" value="">
+    <label>C</label>
+<input type="radio" name="q3" id="d3" value="">
+    <label>D</label>
+    
+<br><br>
+    
+<input type="submit" name="btn" id="btn" value="Submit" onclick="submit()">
+
+<br><br>
+
+<div id="score">
+You got <span id="total"></span> out of 3 correct!
+</div>
+
+
+<script>
+//hiding score div until quiz is complete
+document.getElementById("score").style.display="none";
+
+function submit(){
+	//keep score
+	var score = 0;
+	//have different var for each answer
+	var q1 = document.getElementById("a1");
+	var q2 = document.getElementById("b2");
+	var q3 = document.getElementById("c3");
+	
+    /*if(q1.checked && q2.checked && q3.checked === true){
+    	alert("Correct!");
+    }else{
+		alert("Sorry, please try again.");
+	}*/
+	
+	if(q1.checked === true){
+		score++
+	}else{
+		//do nothing
+	}
+	
+	if(q2.checked === true){
+		score++
+	}else{
+		//do nothing
+	}
+	
+	if(q3.checked === true){
+		score++
+	}else{
+		//do nothing
+	}
+	
+	//write score to the screen
+	document.getElementById("total").innerHTML = score;
+	//make score visible
+	document.getElementById("score").style.display="block";
+}
+</script>
+
+</body>
+</html>
