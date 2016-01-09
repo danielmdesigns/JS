@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+#ball{
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  border-radius: 50%;
+  position:relative;
+}
+</style>
+</head>
+<body>
+<div id="ball"></div>
+
+<script>
+var body = document.getElementsByTagName("body")[0];
+body.style.backgroundColor = "yellow";
+
+var ball = document.getElementById("ball");
+//ball.style.backgroundColor = "green";
+
+var bx = ball.offsetLeft;
+var by = ball.offsetTop;
+var bw = ball.offsetWidth;
+var bh = ball.offsetHeight;
+var dx = 5;
+var dy = 5;
+var active = true;
+
+//move ball
+function animateBall(){
+  bx += dx;
+  by += dy;
+  ball.style.left = bx + "px";
+  ball.style.top = by + "px";
+  
+  if(bx+dx<0 || bx+bw+dx > body.offsetWidth){
+    dx = -dx;
+  }
+  if(by+dy<0 || by+bh+dy > body.offsetHeight){
+    dy = -dy;
+  }
+  
+  if(active){
+    setTimeout(animateBall, 10);
+  }
+}
+
+//start animation after 1second
+var st = setTimeout(animateBall, 1000);
+
+//stop ball on click
+ball.addEventListener("click", stopBall);
+function stopBall(){
+  clearTimeout(st);
+  active = false;
+}
+</script>
+</body>
+</html>
