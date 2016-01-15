@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <title>DOM Form Events</title>
+</head>
+<style type="text/css">
+body{
+	font-family: sans-serif;
+}
+</style>
+<body>
+<h1>Form Validation using JavaScript</h1>
+<form action="register" id="register" method="post">
+  <fieldset>
+    <legend>Register</legend>
+    
+    <label for="email">email:</label>
+    <input type="email" id="email" autofocus required><br>
+    
+    <label for="">password:</label>
+    <input type="text" id="pass1" name="pass1" required>
+    <span id="strength"></span><br>
+    
+    <label for="pass2">confirm password:</label>
+    <input type="password" id="pass2" name="pass2" required><br>
+    
+    <button type="submit">Signup</button>
+    
+  </fieldset>
+</form>
+
+<script type="text/javascript">
+//form validation
+
+//DOM nodes (elements)
+var form = {
+  register: document.getElementById("register"),
+  email: document.getElementById("email"),
+  pass1: document.getElementById("pass1"),
+  pass2: document.getElementById("pass2"),
+  strength: document.getElementById("strength")
+};
+
+//form submit (event listener)
+form.register.addEventListener("submit", CheckForm);
+
+//form submit validation
+var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+function CheckForm(e){
+  var msg = "";
+  
+  //check email
+  if(!reEmail.test(form.email.value)){
+    msg += " your email address";
+  }
+  
+  //check passwords
+  if(form.pass1.value === "" || form.pass1.value != form.pass2.value){
+    msg += " your password(s)";
+  }
+  
+  //complete message
+  if(msg !== ""){
+    msg = "Please check" + msg;
+  }else{
+    msg = "Form is valid! Submitting...";
+  }
+  
+  alert(msg);
+  
+  e.preventDefault();
+}
+
+//check email field
+form.email.addEventListener("change", CheckEmail);
+function CheckEmail(e){
+	if(e.target.value === ""){
+		alert("You forgot your email.");
+	}
+}
+
+//stop space character
+form.pass1.addEventListener("keypress", NoSpaces);
+form.pass2.addEventListener("keypress", NoSpaces);
+function NoSpaces(e){
+	if(e.charCode === 32){
+		e.preventDefault();
+	}
+}
+
+//password strength
+form.pass1.addEventListener("keyup", PasswordStrength);
+var strtext = ["weak", "average", "strong"];
+var strcolor = ["red", "yellow", "green"];
+function PasswordStrength(){
+	var pass = form.pass1.value;
+	
+	//count uppercase
+	var uc = pass.match(/[A-Z]/g);
+	uc = (uc && uc.length || 0);
+	
+	//count numbers
+	var nbm = pass.match(/\d/g);
+	nbm = (nbm && nbm.length || 0);
+	
+	//count symbols (non word)
+	var nw = pass.match(/\W/g);
+	nw = (nw && nw.length || 0);
+	
+	//determine strength
+	var s = pass.length + uc + (nbm*2) + (nw*3);
+	s = Math.min(Math.floor(s / 10), 2);
+	
+	form.strength.textContent = strtext[s];
+	form.strength.style.color = strcolor[s];
+}
+</script>
+
+</body>
+</html>
