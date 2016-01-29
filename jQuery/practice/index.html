@@ -8,8 +8,8 @@
 <body>
  <div id="page">
 		<div id="top">
-        	<a href="#"><img src="contactus.png" alt="Contact Us" title="Contact Us"/></a>
-        	<a href="#"><img src="rssfeed.png" alt="RSS Feed" title="RSS Feed"/></a>
+        	<a href="#"><img src="Contact-Us.png" alt="Contact Us" title="Contact Us"/></a>
+        	<a href="#"><img src="Rss-Feed.png" alt="RSS Feed" title="RSS Feed"/></a>
         </div>
         <div id="header">
         	<h1 id="mainHeading">Flowers</h1>
@@ -21,7 +21,7 @@
        	<h1>Rose in Different Colors</h1>
     </div>
     <div class="content_instance">
-       	<img src="image1.jpeg" />
+       	<img src="image1.jpeg" alt=""/>
         <div class="content_right">
        	<h2>Red Rose</h2>
         <p>This is a red rose. This is a red rose.  This is a red rose.  This is a red rose.  This is a red rose.  This is a red rose.  This is a red rose.  This is a red rose.  This is a red rose. </p><br />
@@ -29,14 +29,14 @@
     </div>
  </div>
        <div class="content_instance">
-          	<img src="image2.jpeg" />
+          	<img src="image2.jpeg" alt=""/>
             <div class="content_right">
 			   <h2>Yellow Rose</h2>
 			   <p>This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. This is a yellow rose. </p>
 			</div>
 	   </div>
 	   <div class="content_instance">
-       	<img src="image3.jpeg" />
+       	<img src="image3.jpeg" alt=""/>
         <div class="content_right">
 			   <h2>White Rose</h2>
                <p>This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. This is a white rose. </p>
@@ -44,7 +44,7 @@
         </div>
        </div>
        <div class="content_instance">
-            <img src="image4.jpeg" />
+            <img src="image4.jpeg" alt=""/>
             <div class="content_right">
                 <h2>Pink Rose</h2>
                 <p>This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. This is a pink rose. </p>
@@ -78,6 +78,13 @@ $(document).ready(function(){
 	$("img").hover(function(){
 		$(this).slideToggle();
 	});
+	
+	//1. Display the content of the first subheading (Rose in Different Colors) using alert
+	alert($(".content_top > h1").text());
+	//2. Change the content of all 4 subheadings to "New Heading"
+	$("#content h2").text("New Heading");
+	//3. Remove the heading "Rose in Different Colors"
+	$($(".content_top > h1").remove());
 });
  </script>
 </body>
