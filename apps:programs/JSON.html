@@ -6,8 +6,7 @@
 </head>
 <body>
 	<script>
-//Write a function which takes an id, a property (prop), and a value.
-//For the given id in collection:
+
 //If value is non-blank (value !== "") and prop is not "tracks" then update or set the value for the prop.
 //If the prop is "tracks" and value is non-blank, push the value onto the end of the tracks array.
 //If value is blank, delete that prop.
@@ -15,8 +14,8 @@
 //Note: Don't forget to use bracket notation when accessing object properties with variables.
 
 //For the given id parameter, which is associated to the collection object:
-	//If the value parameter isn't an empty string, update (or set) the value parameter for the prop parameter
-	//If the prop parameter is equal to "tracks" and the value isn't an empty string, push the value onto the end of the tracks array
+	// #1. If the value parameter IS NOT an empty string, update (or set) the value parameter for the prop parameter
+	// #2. If the prop parameter is equal to "tracks" AND the value IS NOT an empty string, push the value onto the end of the tracks array
 	//If value is an empty string, delete that prop from the object
 //Finally, return the collection object
 
@@ -54,18 +53,18 @@ var collection = {
 // Keep a copy of the collection for tests
 var collectionCopy = JSON.parse(JSON.stringify(collection));
 
-
-
 // Only change code below this line
-function update(id, prop, value) {
-if(value !== "" && prop === collection[id][prop]){
-	//push value onto end of tracks array
-	console.log(collection[id][prop]);
+function update(id, prop, value){
+if(prop === "tracks" && value !== ""){
+	collection[id][prop].push(value);
+}else if(value !== ""){
+	collection[id][prop] = value;
+}else{
+	delete collection[id][prop];
 }
-
   return collection;
 }
-console.log( );
+
 // Alter values below to test your code
 update(5439, "artist", "ABBA");
 
