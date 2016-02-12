@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise</title>
+<script type="text/javascript">
+function convertToKm(){
+	// write your code here
+	var miles = document.getElementById("miles");
+	var newvalue = miles.value * 1.609344;
+	document.getElementById("result").innerHTML = newvalue;
+}
+</script>
+</head>
+<body>
+<input type="text" id="miles" size="10"/> mile(s) =
+<span id="result"></span> <br /><br />
+<button id="btnClick" onclick="convertToKm();">Convert</button>
+</body>
+</html>
+<!--Step 2: You should display the value in kilometer in the span element having id result
+Hint: 1 mile = 1.609344 kilometers.
+Step 3: The output should be in the following format-->

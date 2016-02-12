@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practical JavaScript Test</title>
+</head>
+<body>
+
+
+
+<script>
+// JavaScript Document
+//#1 Variables --
+//Step 1: Declare a variable named myName.
+var myName;
+//Step 2: Declare a variable named myAge and assign your age to it.
+var myAge = 33;
+//Step 3: Copy "alert(myName);" and paste in your code and see the output.
+alert(myName);
+//Step 4: Declare a variable named isInterested and assign true to it.
+var isInterested = true;
+//Step 5: Assign your name to myName variable.
+myName = "Daniel";
+//Step 6: Copy "alert(myName);" and paste in your code and see the output.
+alert(myName + " is " + myAge);
+
+
+//#2 Prompt & Alerts --
+//Collect the name of the user using prompt method. Store it in a variable. Display the message "Hi name !!! Welcome to the course!!!" in an alert box. The name should be replaced by the value entered by the user
+
+var name = prompt("What is your name?");
+alert("Hi " + name + "!!! Welcome to the course!!!");
+
+//#3 Arrays --
+//Step 1: Declare a variable named myArr and store the values 1, 4 and 9 in it.
+//Step 2: Add a new value 16 at the end of the array.
+//Step 3: Replace the value 4 in the array with 25.
+
+var myArr = [1,4,9];
+myArr.push(16);
+myArr[1] = 25;
+console.log(myArr);
+
+//#4 Functions --
+//Step 1: Create a function named wishUser that displays a message "Welcome to Our Website!!!" on the webpage. Call the function
+//Step 2: Create a function named personalWish that accepts the name of the user as an argument and displays a message "Hi name" where name should be replaced by the argument value. Call the function.
+//Step 3: Create a function named findSqr that accepts a number as the argument, calculates the square of that number and return it. Call the function and display the output.
+//Step 4: Create a function named countCharacters that accepts two parameters, a character and a string. It should return the number of times the character is present in the string.
+
+function wishUser(){
+	document.write("Welcome to our Website!!!");
+}
+wishUser();
+
+function personalWish(){
+	document.write("Hi " + name + "<br>");	
+}
+personalWish();
+
+var number = prompt("pick a number 1-5");
+function findSqr(number){
+	document.write("The sqrRoot is: " + number * 4 + "<br>");
+}findSqr(number);
+
+function countChar(char, str){
+	document.write("The length of my string is: " + char.length + "<br>");
+}countChar("Mississippi", 33);
+
+
+//#5 Operators --
+//Make changes to your code following the comments in the file.
+var sum = 3 + 5 + 21;
+//Replace 8 with another number so that sum will be 29
+document.write("The sum is " + sum + "<br />");
+var difference = 34-25;
+//Replace 12 with another number so that difference will be 9
+document.write("The difference is " + difference + "<br />");
+var product = 11*6;
+//Replace 9 with another number so that product will be 66
+document.write("The product is " + product + "<br />");
+var quotient = 120/3;
+//Replace 10 with another number so that quotient will be 40
+document.write("The quoteient is " + quotient + "<br />");
+var remainder = 93%14;
+//Replace 5 with another number so that remainder will be 9
+document.write("The remainder is " + remainder + "<br />");
+
+//#6 Assignment Operators --
+//Step 1: Declare a variable named first and assign the value 5 to it using assignment operator.
+var first = 5;
+//Step 2: Declare a variable named second and assign the value 10 to it using assignment operator.
+var second = 10;
+//Step 3: Declare a variable named third and assign the value 15 to it using assignment operator.
+var third = 15;
+//Step 4: Modify the following lines of code to use appropriate assignment operators (Eg: +=, -=, /=)
+first = first += 12;
+second = second -= 3;
+third = third /= 5
+document.write("The totals are: " + first + ", " + second + " & " + third);
+
+//#8 Operator Preceedure --
+var output1, output2, output3, output4, output5;
+//What will be the value of variable output in the following cases?
+output1 = 7 - 3 * 3;
+output2 = 11 - 3 + 5;
+output3 = 25 % 9 * 2;
+output4 = 3 + 7 * 4;
+output5 = 25 / 5 + 3;
+
+document.write("<br> " + "Output #1: " + output1 + " Ouptut #2: " + output2 + " Output #3: " + output3 + " Output #4: " + output4 + " Output #5 " + output5 + "<br><br>");
+
+//#9 Conditional statements --
+//Collect a number from the user. Check whether the number is odd or even. Display proper message in the format "number is odd." or "number is even.". number should be replaced by the number entered by the user. If the user does not enter a number, display a message "You did not enter a number." (Hint: When you divide an even number by 2, the remainder will be 0 and when you divide an odd number by 2, the remainder will be 1).
+
+var kindOfNumber = prompt("Choose a number between 1 & 10", "Enter your number here...");
+
+//check if kindOfNumber is Odd or Even
+if(kindOfNumber % 2 === 0){
+	alert(kindOfNumber + " is an even number =)");
+}else if(kindOfNumber % 2 === 1){
+	alert(kindOfNumber + " is an odd number");
+}else{
+	alert("Sorry, but, you did not enter a number.");
+}
+
+//#10 Loop --
+//Create a function named sumArray that accepts an array as the input parameter.
+//The function should calculate the sum of values (assuming the values are numbers) in the array and return the sum. You should not hard code the size of the array.
+
+function sumArray(myArr){
+	var newSum = 0;
+	for(var i=0; i<myArr.length; i++){
+		newSum += myArr[i];
+	}
+	return newSum
+}
+console.log(sumArray([1,2,3,4,5]));
+</script>
+</body>
+</html>
