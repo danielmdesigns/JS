@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+	body{
+		font-family: sans-serif;
+		padding: 20px;
+	}
+</style>
+</head>
+<body>
+<script>
+//Using a prompt box, prompt the user to supply his or her name.
+var username = prompt("What is your name?");
+//Then, using 5 additional prompt boxes, prompt the user to supply 5 words.
+var part1 = prompt("You're walking in a forest and you hear a bear? What do you do?");
+var part2 = prompt("But now you're bleeding, what are you going to do now?");
+var part3 = prompt("Now you're safe, but you need a warm place to stay - where do you go?");
+var part4 = prompt("Great! The suns coming up and you're free to move. Where are you going?");
+var part5 = prompt("Safe & sound? You hear a knock at the door... Who is it?");
+//Then, using document.write() statements, use the information stored in variables to display a "Mad-libs" type of story, i.e. create a few paragraphs of information in story format.
+var myStory = username +", was walking home late last night and heard somthing strange. "
+myStory += "RAWR!!! It's a bear and it's trying to attack. It's clawing, but "+ username +" "+ part1 +"'s. ";
+myStory += "Holy crap! "+ username +" is bleeding. No worries, "+ username +" will "+ part2 +". ";
+myStory += "What a night... Shelter is needed, and some is found " + part3 +". ";
+myStory += username +" needs to get "+ part4 +". "
+myStory += "But wait! There's more... Cound it be "+ part5 +"?";
+//Also, prompt the user for a color (i.e. one of the 16 named colors or a hex value).
+//Store this color in a variable.
+var myColor = prompt("What is your favorite color?");
+//In the "mad libs" story, highlight, using the color supplied by the user, each of the words that you previously collected. Do this by surrounding the words with <div> tags and using an inline style.
+var story = "<div style='color:"+ myColor +";'>"+ myStory +"</div>";
+document.body.innerHTML += story;
+</script>
+</body>
+</html>
