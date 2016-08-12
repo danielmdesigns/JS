@@ -9,7 +9,8 @@
 </style>
 <body>
 
-<img src="http://goo.gl/2hPuyx" alt="">
+<img id="pig" src="http://goo.gl/2hPuyx" alt="Pig">
+<img id="earth" src="https://goo.gl/tfsGxr" alt="Earth">
 
 <!--
 <a HREF="http://www.candystand.com" onMouseOver="window.document.face.src='smiley.gif'" onMouseOut="window.document.face.src='sad.gif'">
@@ -17,16 +18,26 @@
 -->
 
 <script>
-var picture = document.getElementsByTagName("img")[0];
-//picture.style.border = "1px solid red";
-picture.addEventListener("mouseover", hoverMouseOver);
+var pig = document.getElementById("pig");
+var earth = document.getElementById("earth");
+	
+//using addEventListener
+pig.addEventListener("mouseover", hoverMouseOver);
 function hoverMouseOver(){
-	picture.src="https://goo.gl/tfsGxr";
+	pig.src="https://goo.gl/tfsGxr";
 }
-picture.addEventListener("mouseout", hoverMouseOut);
+pig.addEventListener("mouseout", hoverMouseOut);
 function hoverMouseOut(){
-	picture.src="http://goo.gl/2hPuyx";
+	pig.src="http://goo.gl/2hPuyx";
 }
+
+//attaching annon function directly
+earth.onmouseover = function(){
+	earth.src="http://goo.gl/2hPuyx";
+};
+earth.onmouseout = function(){
+	earth.src="https://goo.gl/tfsGxr";
+};
 	
 </script>
 
