@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<style>
+	img{cursor: pointer;}
+</style>
+<body>
+
+<img src="http://goo.gl/2hPuyx" alt="">
+
+<!--
+<a HREF="http://www.candystand.com" onMouseOver="window.document.face.src='smiley.gif'" onMouseOut="window.document.face.src='sad.gif'">
+<img src="sad.gif" name="face" BORDER="0"></a>
+-->
+
+<script>
+var picture = document.getElementsByTagName("img")[0];
+//picture.style.border = "1px solid red";
+picture.addEventListener("mouseover", hoverMouseOver);
+function hoverMouseOver(){
+	picture.src="https://goo.gl/tfsGxr";
+}
+picture.addEventListener("mouseout", hoverMouseOut);
+function hoverMouseOut(){
+	picture.src="http://goo.gl/2hPuyx";
+}
+	
+</script>
+
+</body>
+</html>
