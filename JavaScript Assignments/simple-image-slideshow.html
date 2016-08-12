@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<img id="mainImage" src="https://goo.gl/bYsBO5" alt="">
+<script>
+var myImage = document.getElementById("mainImage");
+var imageArray = [
+	"https://goo.gl/PXD0GS",
+	"https://goo.gl/UoE961",
+	"https://goo.gl/0FmsH3",
+	"https://goo.gl/0mbPH2",
+	"https://goo.gl/bYsBO5"
+];
+var imageIndex = 0;
+function changeImage(){
+	myImage.setAttribute("src", imageArray[imageIndex]);
+	imageIndex++;
+	if(imageIndex >= imageArray.length){
+		imageIndex = 0;
+	}
+}
+var myInterval = setInterval(changeImage, 1000);
+	
+function stopChangeImage(){
+	clearInterval(myInterval);
+}
+myImage.addEventListener("click", stopChangeImage);
+	
+</script>
+</body>
+</html>
