@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<p id="demo">5</p>
+<script>
+		
+function simpleMessage(){
+	alert("This is a simple message, set by a timer (setTimeout)");
+}
+//Set Timeout delays something that you want to happen
+setTimeout(simpleMessage, 5000);
+	
+//Repeats something that you want to happen
+var p = document.getElementById("demo");
+var counter = 4;
+function changeNumber(){
+	p.innerHTML = counter;
+	counter--;
+	if(counter < 0){
+		//telling clearInterval() to stop myInterval when the condition is met
+		clearInterval(myInterval);
+		p.innerHTML = "The end."
+	}
+}
+//saving setInterval in a variable to control it later (see above)
+var myInterval = setInterval(changeNumber, 1000);
+
+	
+//clearInterval(mySetInterval);
+</script>
+</body>
+</html>
