@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+
+<script>
+var q1 = prompt("What's your favorite ice cream?");
+q1 = q1.toLowerCase();
+console.log(q1);
+	
+//using if/else/else if
+if(q1 === "chocolate"){
+	alert("That's my favorite too!");
+}else if(q1 === "vanilla"){
+	alert("Not my first choice, but always so delicious.");
+}else{
+	alert("Interesting. I'll have to give that a try some time.");
+}
+
+//using switch statement
+var q2 = prompt("Ok, favorite football team?");
+q2 = q2.toLowerCase();
+switch(q2){
+	case "new york jets":
+	case "jets":
+		alert("OMFG!!! That's my favoirte too. We should be friends.");
+		break;
+//	case "jets":
+//		alert("OMFG!!! That's my favoirte too. We should be friends.");
+//		break;
+	case "patriots":
+		alert("Cheater!");
+		break;
+	default:
+		alert("Really? That's cool...");	
+}
+</script>
+
+</body>
+</html>
