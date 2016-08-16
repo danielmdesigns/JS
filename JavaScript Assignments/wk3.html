@@ -7,18 +7,25 @@
 <body>
 <script>
 	var myArray = ["First Item", "Second Item", "Third Item", "Fourth Item", "Fifth Item"];
+	var newArray = ["A", "B", "C", "D", "E"];
 	//loop over an array
 	for(var i=0; i<=myArray.length; i++){
 		
 		//generate a random number the length of the array
 		var myRandomArrayIndex = Math.floor(Math.random()*myArray.length);
 		
+		
+		//remove that selection from original array to avoid duplicates
+		//myArray.splice(myRandomArrayIndex, 1);
+		
+		//console.log(myArray[myRandomArrayIndex]);
+		
 		//console.log(myRandomArrayIndex);
 		
 		//test for duplicate?
-		if(myArray === true){
-			
-		}else{}
+//		if(){
+//			
+//		}else{}
 		
 		//display the random array values
 		console.log(myArray[myRandomArrayIndex]);
