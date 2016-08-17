@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<script>
+
+//create new instance of an object
+//constructor function (a player object/template)
+function Player(name, score, rank){
+	this.name = name;
+	this.score = score;
+	this.rank = rank;
+}
+	
+//creating a new player, fred
+var fred = new Player("Fred", 10000, 5);
+
+console.log(fred.name);
+console.log(fred.score);
+console.log(fred.rank);
+	
+	
+	
+//attach new function to the player object
+Player.prototype.logInfo = function(){
+	console.log("I am: " , this.name);
+}
+
+Player.prototype.promote = function(){
+	this.rank++;
+	console.log(this.name, "has a new rank of:" , this.rank);
+}
+
+console.log(fred.promote());
+console.log(fred.rank);
+	
+	
+var sandy = new Player("Sandy", 5000, 1);
+sandy.score = 10000;
+sandy.promote();
+	
+console.log("Sandy's score is: "+ sandy.score +" and her rank is now "+ sandy.rank);
+	
+</script>
+</body>
+</html>
