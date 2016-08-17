@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+
+<div id="mainContent">
+	<h1>This is an AJAX Example.</h1>
+</div>
+
+<!--Ajax flow-->
+<script>
+//1. define the variable
+var myRequest;
+	
+//2. feature check
+if(window.XMLHttpRequest){
+	myRequest = new XMLHttpRequest(); //firefox, safari, chrome
+	//new XMLHttpRequest() is the middleman between the server && page load
+}else if(window.ActiveXObject){
+	myRequest = new ActiveXObject("Microsoft.XMLHTTP"); //ie
+}
+	
+//3. prepare to accept response
+myRequest.onreadystatechange = function(){
+	//this makes multiple calls, we need #4
+	console.log("called...");
+}
+
+//4. then configure && send
+myRequest.open("GET", "http://www.mysite.com", true);
+myRequest.send(null);
+</script>
+
+
+
+<!--Example Request-->
+<script>
+var myAjaxRequest;
+if(window.XMLHttpRequest){
+	myAjaxRequest = new XMLHttpRequest();
+}else if(window.ActiveXObject){
+	myAjaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+}
+myAjaxRequest.onreadystatechange = function(){
+	console.log("The event handler for the request call back has fired...");
+	if(myAjaxRequest.readyState === 4){
+		var p = document.createElement("p");
+		var t = document.createTextNode(myAjaxRequest.responseText);
+		p.appendChild(t);
+		document.getElementById("mainContent").appendChild(p);
+	}
+}
+myAjaxRequest.open("GET", "text.txt", "true");
+myAjaxRequest.send(null);
+</script>
+</body>
+</html>

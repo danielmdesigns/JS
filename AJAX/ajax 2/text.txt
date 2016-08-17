@@ -1,0 +1,1 @@
+This is some ajax plain text that I am using strictly as an example. This text is not part of the page and is in a separate file. I am calling this file w/ the text using AJAX and making it appear on my screen. how cool =) Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
