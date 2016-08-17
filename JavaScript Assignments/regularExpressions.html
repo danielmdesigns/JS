@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+
+<script>
+var myRE = /hello/;
+var myORE = new RegExp("hello");
+	
+var myString = "Does this sentence have the word hello in it?";
+if(myRE.test(myString)){
+	console.log("Yes.");
+}else{
+	console.log("No.");
+}
+	
+var myREa = /^hello/; //^ hello would need to appear at the start
+	
+	//example
+	var myString1 = "hello. how are you?";
+	if(myREa.test(myString1)){
+		console.log("Yes.");
+	}else{
+		console.log("No.");
+	}
+
+	//checking to see if hello is at the start of the string, beginning in either capital or lowercase h
+	var myREb = /^[hH]ello/;
+	var myStringb = "Hello. But does this start at the start of the string?";
+	if(myREb.test(myStringb)){
+		console.log("Yes.");
+	}else{
+		console.log("No.");
+	}
+	
+var myRE2 = /hello$/; //$ hello would need to appear at the end
+var myRE3 = /hel+o$/; //+ previous char needs to appear once or more (l)["helo", "hello", "hellllllllllo"]
+var myRE4 = /hel*o$/; //* previous char needs to appear none or more (l)["heo", "helo", "hello", "helllllllo"]
+var myRE5 = /hel?o/; //? previous char needs to appear zero or one "optional" (l)["heo","helo"]
+var myRE6 = /hello|goodbye/; // true if the string contains hello || goodbye
+var myRE7 = /he..o$/; //. any character
+var myRE8 = /\wello/; //\w must be alphanumeric or an _
+var myRE8 = /\bhello/; //\b (boundry) hello would have to appear after a space
+var myRE9 = /[crnld]ope/; //[...] range of characters will be true ["cope","rope","nope","lope","dope"]
+	
+
+//check for US zipcode
+/^[0-9]{5}(?:-[0-9]{4})?$/
+
+//check for email address formatting
+/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/
+</script>
+
+</body>
+</html>
