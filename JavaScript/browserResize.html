@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+
+<script>
+function adjustStyle(){
+var width = 0;
+
+//dependent on browser, get the width
+if(window.innerHeight){
+	//if window has an innerHeight, get the innerWidth property
+	width = window.innerWidth;
+}else if(document.documentElement && document.documentElement.clientHeight){
+	//if not, check to see if the browser has the documentElement && clientHeight
+	width = document.documentElement.clientWidth
+}else if(document.body){
+	//if not that either, check for the document.body.clientWidth
+	width = document.body.clientWidth;
+}else{
+	alert("¯\_(ツ)_/¯");
+}
+
+//check screen width
+if(width < 600){
+	alert("I am less than 600px");
+}else{
+	alert("I am larger than 600px");
+}
+
+}
+
+//on window is resized, call the adjustStyle function
+window.onresize = function(){
+	adjustStyle();
+}
+</script>
+
+</body>
+</html>
