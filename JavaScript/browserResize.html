@@ -37,6 +37,10 @@ if(width < 600){
 window.onresize = function(){
 	adjustStyle();
 }
+//on page load, call the adjustStyle function once to check screen width
+window.onload = function(){
+	adjustStyle();
+}
 </script>
 
 </body>
