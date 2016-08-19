@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<script>
+
+	console.log(localStorage); //Plain browser Object
+	
+	//SET a string
+	localStorage.setItem("color","green"); //have to remove it
+	sessionStorage.setItem("color","orange"); //removes automaticlly when browser is closed
+	
+	//GET a string
+	var getMyColor = localStorage.getItem("color");
+	console.log("Get my Local Storage Data: "+ getMyColor);
+	console.log("Get my Session Storage Data: "+ sessionStorage.getItem("color"));
+	
+	//REMOVE a string
+	localStorage.removeItem("color");
+	console.log("I have removed my Local Storage Data: "+ localStorage.getItem("color"));
+	
+	//OOP Local Storage
+	localStorage.color = "red"; //Set
+	console.log(localStorage.color); //Get
+	
+	delete localStorage.color //Remove
+	console.log(localStorage.color);
+	
+</script>
+</body>
+</html>
