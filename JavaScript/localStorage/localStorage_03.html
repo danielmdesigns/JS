@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+
+<h4>Search:</h4>
+<input type="text">
+<button class="search">Search</button>
+
+<h4>Recent Searches:</h4>
+<ul class="recent">
+</ul>
+<button class="clear">Clear</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script>
+function supportsLocalStorage(){
+	//try to run this
+	try{
+		//test that a key called "localStorage" exisit in the window && that it is not null
+		//make sure that the window object has a localStorage key, and make sure that that key has a set of functions and/or properties that are not null
+		return "localStorage" in window && window["localStorage"] !== null	
+	}catch(e){
+		//if there are errors and/or exceptions (e) return false
+		return false;
+	}
+}
+
+//GET searches to show
+function getRecentSearches(){
+	var searches = localStorage.getItem("recentSearches");
+	//if it exists
+	if(searches){
+		return JSON.parse(searches);
+	}
+	return []; //otherwise, return empty array
+
+}
+	
+//SET searches
+function saveSearchString(str){
+	//check if we've already saved it
+	var searches = getRecentSearches();
+	//if it's not true OR if string already exists inside the searches array, return false
+	if(searches.indexOf(str) > -1 || !str){
+		return false;
+	}
+	searches.push(str); //push string to seraches array
+	localStorage.setItem("recentSearches", JSON.stringify(searches)); //store searches under the recentSearches key in localStorage
+	return true;
+}
+	
+if(supportsLocalStorage()){
+	//Reference DOM element
+	var input = $("input");
+	
+	//Display List via Local Storage
+	var recentSearches = getRecentSearches();
+	$.each(recentSearches, function(index, searchString){
+		$("ul").append("<li>"+ searchString +"</li>");
+	});
+
+	//Search button
+	$("button.search").on("click", function(event){
+		event.preventDefault()
+		var searchString = input.val();
+		if(saveSearchString(searchString)){
+			$("ul").append("<li>"+ searchString +"</li>");
+			input.val("");
+		}		
+	});
+	//Submit on Enter
+	$("input").on("keypress", function(e){
+	   if(e.keyCode === 13){
+		   $("button.search").click();
+	   }
+	});
+
+	//Clear results
+	$("button.clear").on("click", function(){
+		$("ul").empty();
+		localStorage.removeItem("recentSearches");
+	});	
+}
+	
+
+</script>
+</body>
+</html>
