@@ -10,7 +10,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $(".switch").on("click", function(){
-	$("link").attr("href", "two.css");
+	if($("link").attr("href") === "one.css"){
+		//alert("stylesheet one is being used.");
+		$("link").attr("href", "two.css");
+	}else{
+		$("link").attr("href", "one.css");
+	}
+	//$("link").attr("href", "two.css");
 });
 </script>
 </body>
