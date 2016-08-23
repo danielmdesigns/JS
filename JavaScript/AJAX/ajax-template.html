@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<script>
+	function myAjaxCall(){
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function(){
+			if(xhr.status === 200){
+				//code to execute
+			}else{
+				//error
+			}
+		}
+		
+		xhr.open("GET", "page.html");
+		
+		xhr.send();
+	}
+</script>
+</body>
+</html>
