@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<a href="#link">My Link</a>
+<script>
+	var myString = "Here is some text that I want to replace.";
+	myString = myString.replace("replace", "update");
+	console.log(myString);
+	
+	
+	
+	var a = document.getElementsByTagName("a")[0];
+	a.onclick = function(e){
+		e.preventDefault();
+		var attr = a.getAttribute("href");
+		attr = attr.replace("#","");
+		alert(attr);
+	}
+</script>
+</body>
+</html>
