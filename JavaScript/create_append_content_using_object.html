@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<article>
+	<h1>Lorem ipsum dolor sit.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis impedit, magnam vitae ratione! Cupiditate eveniet totam officia inventore beatae aspernatur consequatur excepturi, sit iure alias velit placeat, numquam nemo vero! Quos rerum culpa qui nemo. Minus, quisquam. Earum, cupiditate impedit.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et distinctio, perferendis est quidem, sapiente vel placeat esse beatae, culpa ex, deserunt laudantium. Temporibus aperiam tempora ea tenetur corporis molestias. Minima quia sunt modi quibusdam ipsum nemo, pariatur recusandae, cum voluptatem?</p>
+</article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script>
+	//Create an element using an Object
+	$("<h2></h2>", {
+		text: "Hello from JavaScript",
+		class: "myClass"
+	}).appendTo("article");
+	
+	//Create an element using jQuery
+	var p = $("<p></p>");
+	var myComponent = p.text("Maecenas faucibus mollis interdum.");
+	$(myComponent).appendTo("article");
+</script>
+</body>
+</html>
