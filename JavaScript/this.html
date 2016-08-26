@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Understanding "this"</title>
+</head>
+<body>
+
+<a href="#">Click Me</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script>
+	
+//Execute a function on element trigger and "this" refers to the anchor
+function doSomething(e){
+	e.preventDefault();
+	//console.log(e);
+	console.log(this);
+}
+$("a").on("click", doSomething);
+	
+	
+	
+//Execute a function using an Object Literal Method; "this" refers to the anchor
+var myObjectLiteral = {
+	doSomethingNow : function(e){
+		e.preventDefault();
+		console.log(this);
+	}
+}
+$("a").on("click", myObjectLiteral.doSomethingNow);
+
+	
+	
+//Combine the two, but now "this" will refer to myObjectLiteral because it's now the parent
+$("a").on("click", function(e){
+	myObjectLiteral.doSomethingNow();
+	e.preventDefault();
+});
+	
+	
+	
+function helloWorld(){
+	console.log("Hello World!");
+	console.log(this);
+}
+helloWorld();
+	
+	
+	
+//Using "this" within an object
+var Portland = {
+	bridges: 12,
+	airport: 1,
+	soccerTeams: 1,
+	logNumberOfBridges: function(){
+		console.log("There are "+ this.bridges +" bridges in Portland.");
+	}
+}
+Portland.logNumberOfBridges();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+</script>
+
+</body>
+</html>
