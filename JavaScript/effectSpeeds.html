@@ -13,12 +13,16 @@
 		max-width: 600px;
 		margin: 2rem auto 0;
 	}
+	.preview{
+		color: #7B7B7B;
+	}
 </style>
 </head>
 <body>
 <section>
 	<h1>Lorem ipsum dolor sit amet.</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam reiciendis mollitia eos distinctio, totam iste qui error minima modi corporis nobis! Porro odit delectus quidem modi ad qui, officiis atque quae iusto esse cupiditate aut magni dolor sit voluptatum rerum perspiciatis similique ipsam amet praesentium.</p>
+	<p class="preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 	<button>Get Started</button>
 </section>
 
@@ -28,7 +32,7 @@ $("button").on("click", toggleContent);
 //jQuery.fx.speeds._default = 4000;
 var speed = 2500;
 function toggleContent(){
-	$("p").slideToggle(speed);
+	$(".preview").slideToggle(speed);
 }
 </script>
 </body>
