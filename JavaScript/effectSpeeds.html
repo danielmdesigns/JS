@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+	body{
+		font-family: sans-serif;
+		color: #444;
+	}
+	section{
+		width: 100%;
+		max-width: 600px;
+		margin: 2rem auto 0;
+	}
+</style>
+</head>
+<body>
+<section>
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam reiciendis mollitia eos distinctio, totam iste qui error minima modi corporis nobis! Porro odit delectus quidem modi ad qui, officiis atque quae iusto esse cupiditate aut magni dolor sit voluptatum rerum perspiciatis similique ipsam amet praesentium.</p>
+	<button>Get Started</button>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$("button").on("click", toggleContent);
+//jQuery.fx.speeds._default = 4000;
+var speed = 2500;
+function toggleContent(){
+	$("p").slideToggle(speed);
+}
+</script>
+</body>
+</html>
