@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+	body{
+		font-family: sans-serif;
+		color: #444;
+		font-size: 1rem;
+		padding: 20px;
+	}
+	section{
+		width: 100%;
+		max-width: 600px;
+		margin: 2rem auto 0;
+	}
+	.preview{
+		color: #7B7B7B;
+		font-style: italic;
+		font-size: .75rem;
+	}
+</style>
+</head>
+<body>
+<section>
+	<h1>Ullamcorper Tortor Porta Mollis Malesuada</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam reiciendis mollitia eos distinctio, totam iste qui error minima modi corporis nobis! Porro odit delectus quidem modi ad qui, officiis atque quae iusto esse cupiditate aut magni dolor sit voluptatum rerum perspiciatis similique ipsam amet praesentium.</p>
+	<p class="preview">Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+	<button>Get Started</button>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+//jQuery.fn[name] = function(speed, easing, callback){
+//	return this.animate(props, speed, easing, callback);
+//};
+	
+//Self Invoking Anonymous Function;
+(function(){
+//jQuery code
+jQuery.fn.flash = function(speed, easing, callback){
+	//console.log("hi there");
+	//return this.animate(props, speed, easing, callback);
+	var mySpeed = 1250;
+	//var myCallback = console.log("Callback starting now");
+	$(this).slideToggle(mySpeed, function(){
+		console.log("Now I come after the effect is completed.");
+	});
+	
+};
+	
+$("button").on("click", runEffect);
+function runEffect(){
+	$(".preview").flash();
+}
+})();
+</script>
+</body>
+</html>
