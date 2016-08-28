@@ -32,22 +32,21 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
+//Original jQuery code
 //jQuery.fn[name] = function(speed, easing, callback){
 //	return this.animate(props, speed, easing, callback);
 //};
 	
 //Self Invoking Anonymous Function;
 (function(){
-//jQuery code
+
+//Creating my own custom effect using jQuery's original code
 jQuery.fn.flash = function(speed, easing, callback){
-	//console.log("hi there");
-	//return this.animate(props, speed, easing, callback);
 	var mySpeed = 1250;
-	//var myCallback = console.log("Callback starting now");
-	$(this).slideToggle(mySpeed, function(){
-		console.log("Now I come after the effect is completed.");
+	var myElement = $(this);
+	myElement.slideUp(mySpeed, function(){
+		myElement.delay(mySpeed).slideDown(mySpeed);
 	});
-	
 };
 	
 $("button").on("click", runEffect);
