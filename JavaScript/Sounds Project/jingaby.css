@@ -1,0 +1,189 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "liga", "kern";
+          font-feature-settings: "liga", "kern";
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+	background: url("bg.jpg");
+	font-size: 1em;
+  font-weight: 400;
+  color: #444;
+	min-height: 100vh;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  line-height: 1;
+  background-color: #fcb03a;
+  overflow: hidden;
+}
+
+.container, .tiles {
+  padding: 2rem 1.5rem;
+}
+
+.logo {
+  width: 100%;
+	max-width: 650px;
+  padding: 3rem 1rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+h1{
+	font-family: 'Caveat', cursive;
+	font-size: 2rem;
+	max-width: 1000px;
+	margin: 2rem auto 0;
+	line-height: 1.15;
+}
+
+/** 
+* Make flexbox grids super easy!
+* ---
+* @param $cols — Number of columns
+* @param $margin — Margin with unit
+*/
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .tiles {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .tiles:after {
+    content: "";
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  .tiles > * {
+    width: calc( 50% - 0.5rem );
+    margin: 0 0.5rem;
+  }
+  .tiles > *:nth-child(1) {
+    margin-left: 0;
+  }
+  .tiles > *:nth-child(2n) {
+    margin-right: 0;
+  }
+  .tiles > *:nth-child(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 999px) {
+  .tiles {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .tiles:after {
+    content: "";
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  .tiles > * {
+    width: calc( 33.33333% - 0.66667rem );
+    margin: 0 0.5rem;
+  }
+  .tiles > *:nth-child(1) {
+    margin-left: 0;
+  }
+  .tiles > *:nth-child(3n) {
+    margin-right: 0;
+  }
+  .tiles > *:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .tiles {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .tiles:after {
+    content: "";
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  .tiles > * {
+    width: calc( 25% - 0.75rem );
+    margin: 0 0.5rem;
+  }
+  .tiles > *:nth-child(1) {
+    margin-left: 0;
+  }
+  .tiles > *:nth-child(4n) {
+    margin-right: 0;
+  }
+  .tiles > *:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+}
+
+.tile {
+  font-size: 200%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 150px;
+  margin-bottom: 1rem;
+	border-radius: 15px;
+  cursor: pointer;
+  background: #FFF;
+}
+.tile:hover {
+	box-shadow: 0 0 12px rgba(0,0,0,0.2)
+}
+
