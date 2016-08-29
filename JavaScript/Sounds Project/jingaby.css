@@ -42,7 +42,7 @@ img {
   border: 0;
 }
 
-h1{
+h1, footer > p{
 	font-family: 'Caveat', cursive;
 	font-size: 2rem;
 	max-width: 1000px;
@@ -191,4 +191,6 @@ h1{
 	transform: scale(1.0);
 	
 }
-
+footer{
+	margin-bottom: 4rem;
+}
