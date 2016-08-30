@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Slider</title>
+<style>
+	*{margin: 0; padding: 0;}
+	.slider{
+		width: 100%;
+		max-width: 400px;
+		height: 200px;
+		text-align: center;
+		margin: 1rem auto 0;
+		/*overflow: hidden;*/ /*value if you dont want scroll option*/
+		overflow: scroll /*allows images to scroll if no JS*/
+	}
+	.slider ul{
+		width: 10000px;
+		list-style: none;
+	}
+	.slider li{
+		float: left;
+	}
+	.slider img{
+		width: 100%;
+	}
+	.slider-nav{
+		display: none;
+		width: 100%;
+		max-width: 400px;
+		margin: 10px auto 0;
+	}
+	button{
+		padding: 1rem;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+<div class="slider">
+	<ul>
+		<li><img src="http://goo.gl/Nh6PyX" alt=""></li>
+		<li><img src="http://goo.gl/SxfbVt" alt=""></li>
+		<li><img src="http://goo.gl/GI1ZI1" alt=""></li>
+		<li><img src="https://goo.gl/vhOQGl" alt=""></li>
+	</ul>
+</div>
+
+<div class="slider-nav">
+	<button data-dir="prev">Prev</button>
+	<button data-dir="next">Next</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script>
+(function($){
+	var sliderUL = $("div.slider").css("overflow","hidden").children("ul"); //grab the slider, set overflow to hidden so imgs do not scroll
+	var imgs = sliderUL.find("img"); // find all images
+	var imgWidth = imgs[0].width; //get the width, returns 400
+	var imgsLength = imgs.length; //how many images in the collection
+	var current = 1;
+	var totalImgsWidth = imgsLength * imgWidth;
+	
+	
+	
+	$(".slider-nav").show().find("button").on("click", function(){
+		//console.log("clicked");
+		var direction = $(this).data("dir"); //get the data value of the button that was clicked
+		//console.log(direction);
+		var location = imgWidth;
+		
+		
+		
+		//update currect value
+		if(direction === "next"){
+			//if the next button was clicked, go to next img
+			current = current + 1;
+			//current += 1; //2
+		}else{
+			//if next was not clicked, which is prev, go backwards instead
+			current = current - 1;
+      //current -= 1; //0
+		}
+		
+		//terniary is same as if/else statement above
+		//(direction === "next") ? ++current : --current;
+		
+		
+		
+		//if first image, switch to the last image
+		if(current === 0){
+			current = imgsLength; //set index of 0 to last image
+			location = totalImgsWidth - imgWidth;
+			direction = "next"; //even if click prev we want to send them back to 1 since user is on last img
+		}else if(current -1 === imgsLength){ //are we at the end?
+			current = 1;
+			location = 0;
+		}
+		
+		transition(sliderUL, location, direction);
+		
+	});
+	
+	function transition(slider, location, direction){
+		var unit;
+		//alert("Transition is running...");
+		if(direction && location !== 0){
+			unit = (direction === "next") ? "-=" : "+=";
+		}
+		slider.animate({
+			//"margin-left":"-=400" //this works
+			//"margin-left": unit+400 //this is not working
+			"margin-left": unit ? (unit + location) : location //this is not working
+		});
+	}
+	
+})(jQuery);
+</script>
+
+</body>
+</html>
