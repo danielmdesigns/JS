@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery .each()</title>
+<style>
+	body{
+		font-family: sans-serif;
+		color: #444;
+	}
+	.container{
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	img{
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+
+<div class="container"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<!--Javascript Template-->
+<script id="blogTemplate" type="each/component">
+	<h2>{{title}}</h2>
+	<img src={{thumbnail}} alt={{title}}>
+</script>
+
+<script>
+(function(){
+	var content = [
+		{
+			title: "asdfasdf",
+			thumbnail: "https://goo.gl/Gv4CKS"
+		},
+		{
+			title: "sdgsdfgsdf",
+			thumbnail: "https://goo.gl/gTOxM8"
+		}
+	];
+	template = $("#blogTemplate").html(); //store a reference to the template, html gets the actual HTML
+	console.log(template);
+	console.log( $.trim(template)); //using jQuery method trim to remove white space
+	
+	var frag = "";
+	
+	$.each(content, function(index, myObj){
+		console.log(index);
+		console.log(myObj);
+		//using replace to find the title. the i flag means it can be upper or lowercase. g flag means search globably for all instances
+//		var post = template.replace(/{{title}}/ig, myObj.title)
+//											 .replace(/{{thumbnail}}/ig, myObj.thumbnail);
+//		console.log(post);
+//		
+//		$("body").append(post);
+		frag += template.replace(/{{title}}/ig, myObj.title)
+   									.replace(/{{thumbnail}}/ig, myObj.thumbnail);
+	});
+	console.log(frag);
+	var cont = $(".container").append(frag);
+	$("body").append(cont);
+})();
+</script>
+</body>
+</html>
