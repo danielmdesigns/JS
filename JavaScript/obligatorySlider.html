@@ -104,6 +104,7 @@
 	
 	function transition(slider, location, direction){
 		var unit;
+		var properties = unit ? (unit + location) : location;
 		//alert("Transition is running...");
 		if(direction && location !== 0){
 			unit = (direction === "next") ? "-=" : "+=";
@@ -111,7 +112,7 @@
 		slider.animate({
 			//"margin-left":"-=400" //this works
 			//"margin-left": unit+400 //this is not working
-			"margin-left": unit ? (unit + location) : location //this is not working
+			"margin-left": properties //this is not working
 		});
 	}
 	
