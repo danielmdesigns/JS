@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Handlebars & jQuery</title>
+</head>
+<body>
+
+<ul class="tweets">
+	<!--Handlebars Template-->
+	<script id="template" type="text/handlebar-template">
+		<li>
+			<h2>{{author}}</h2>
+			<p>{{tweet}}</p>
+		</li>
+	</script>
+</ul>
+
+<ul class="comments">
+	<!--Handlebars Template-->
+	<script id="template2" type="text/handlebar-template">
+		{{#each this}}
+		<li>
+			<h2>{{fullName user}} {{#if age}}<small> - {{age}}</small>{{/if}}</h2>
+			<p>{{{comment}}}</p>
+			<!-- <small>{{#unless quote}}<em>No Quote Available</em>{{/unless}}</small> -->
+			{{#if quote}}
+				<h6><em>{{quote}}</em></h6>
+			{{else}}
+				<h6><em>No Quote Available</em></h6>
+			{{/if}}
+		</li>
+		{{/each}}
+	</script>
+</ul>
+
+<!--Handlebars Template-->
+<!--<script id="template" type="text/handlebar-template"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="handlebars.js"></script>
+<script>
+(function(){
+	var data = {
+		author: "Daniel Maldonado",
+		tweet: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
+	};
+	
+	var template = Handlebars.compile($("#template").html());
+	var tempVar = template(data);
+	$("ul.tweets").append(tempVar);
+	console.log("I am showing a Handlerbars example: "+ tempVar);
+	
+})();
+	
+(function(){
+	var feedback = [
+		{
+		user: {first: "Them", last: "They", age: "33"},
+		comment: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+		quote: "Maecenas sed diam eget risus varius blandit sit amet non magna."
+		},
+		{
+		user: {first: "Me", last: "You"},
+		comment: "<strong>Fusce dapibus</strong>, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+		//age: "34"
+		},
+		{
+			user: {first: "I", last: "We", age:21},
+			comment: "Vestibulum id ligula porta felis euismod semper.",
+			quote: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+		}
+		
+	];
+	
+	Handlebars.registerHelper("fullName", function(user,age){
+		return user.first+ " " +user.last+ " - " +user.age;
+	});
+	
+	var test = Handlebars.compile($("#template2").html());
+	$("ul.comments").append(test(feedback));
+	
+	
+})();
+</script>
+</body>
+</html>
