@@ -31,6 +31,7 @@
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> <!--jQuery UI for Easing-->
 <script>
 //Original jQuery code
 //jQuery.fn[name] = function(speed, easing, callback){
@@ -44,8 +45,8 @@
 jQuery.fn.flash = function(speed, easing, callback){
 	var mySpeed = 1250;
 	var myElement = $(this);
-	myElement.slideUp(mySpeed, function(){
-		myElement.delay(mySpeed).slideDown(mySpeed);
+	myElement.slideUp(mySpeed,"easeInBack", function(){
+		myElement.delay(mySpeed).slideDown(mySpeed, "easeInBack");
 	});
 };
 	
