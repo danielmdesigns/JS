@@ -14,4 +14,49 @@
 <p class="little">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</p>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script>
+	
+(function(){
+var arr=[1,2,3,4,5,6,7,8,9,10];
+
+var myArray = $.grep(arr, function(thingInsideArray, indexOfThingInsideArray){
+	//only return numbers greater than five
+	return thingInsideArray > 5;
+}, true);
+	
+console.log(myArray);
+	
+})();
+	
+(function(){
+	var obj = [
+		{
+			first: "daniel",
+			last: "maldonado"
+		},
+		{
+			first: "erin",
+			last: "maldonado"
+		},
+		{
+			first: "jackson",
+			last: "maldonado"
+		},
+		{
+			first: "cash",
+			last: "franco"
+		}
+	];
+	
+	var myObject = $.grep(obj, function(val, index){
+		return val.last === "maldonado";
+	});
+	
+	console.log(myObject);
+	
+})();
+	
+</script>
+
 </html>
