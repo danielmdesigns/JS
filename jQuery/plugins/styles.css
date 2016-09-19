@@ -1,153 +1,84 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  /* showing the default */
-  line-height: 1.8;
-  margin: 0;
-}
-nav {
-  width: 100%;
-  background: dodgerblue;
-  border-right: none;
-  font-family: sans-serif;
-}
-
-nav ul {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
+/* Header */
 nav ul li {
   list-style: none;
-  float: left;
-  text-align: center;
-  width: 16.6667%;
-  width: calc(100% / 6);
-  box-sizing: border-box;
-}
-nav ul li:hover {
-  background: #0077ea;
-}
-
-nav ul li:first-child {
-  border-left: none;
-}
-
-nav ul li a {
-  display: block;
-  text-decoration: none;
-  color: #FFF;
-  padding: 20px 0;
-}
-@media(max-width:500px){
-nav ul li{
-	display: block;
-	width: 100%;
-}
-}
-
-.article {
-  max-width: 610px;
-  margin: 0 auto;
-  /* for mobile */
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 60px;
-  padding-bottom: 90px;
-  /* (shorthand) padding: 60px 30px 90px; */
-}
-/* yoink! dropbox colors http://brandcolors.net/ */
-/* sizes: http://www.modularscale.com/?16&px&1.8,1.34164&web&table */
-/* HEADER */
-.category {
-  font-family: 'Montserrat', sans-serif;
-  color: #7b8994;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.342em;
-  line-height: 1;
-}
+  padding: 8px 0; }
+@media(min-width: 450px) {
+  nav ul li {
+    display: inline-block;
+    margin-left: 20px; }
+    nav ul li:first-of-type {
+      margin-left: 0; } }
+/*Heading */
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  /* default */
-  font-size: 2.415em;
-  line-height: 1.2;
-  /*
-  letter-spacing: -1px;
-  color: @blue;
-  padding-bottom: 6px;
-  border-bottom: 2px solid @gray;
-  */
-}
-.pub-date {
-  display: block;
-  font-family: 'Open Sans', sans-serif;
-  color: #7b8994;
-  text-transform: uppercase;
-  font-size: 74.5%;
-  font-size: 0.745em;
-  /* 74.5% of parent */
-}
-/* END HEADER */
-/* ARTICLE CONTENT */
+  color: #444;
+  font-weight: 100;
+  font-size: 3rem; }
+
+/* Links */
+a {
+  color: dodgerblue; }
+  a:hover {
+    color: #006ad1; }
+
+a.active {
+  color: #006ad1; }
+
+/* Paragraph */
 p {
-  /* we did most of the work in the body tag! */
-  margin-bottom: 1em;
-}
-h2 {
-  font-size: 1.8rem;
-  line-height: 1;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-h3 {
-  font-size: 1.342rem;
-  line-height: 1;
-  margin-top: 1.8em;
-  margin-bottom: 0.5em;
-}
-/* inline vs inline-block; */
-code {
-  display: inline;
-  /* display: inline-block; */
-  vertical-align: baseline;
-  padding-top: 0px;
-  /* padding-bottom: 300px; */
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: whitesmoke;
-  /* background-color: fade(teal, 30%); */
-}
-/* What <display> are images ? */
-/* another great default, for your sanity. */
-img {
-  /* display: block; */
-  max-width: 100%;
-}
-sup {
-  font-family: 'Open Sans', sans-serif;
-}
-figure {
-  margin: 2em 0 1em;
-  /* what is a float ? */
-  /*
-  float: right;
-  width: 70%;
-  padding: 0;
-  margin-right: -25%;
-  margin-left: 1em;
-  */
-}
-figcaption {
-  font-family: 'Open Sans', sans-serif;
-  color: #7b8994;
-  line-height: 1.8em;
-  text-align: center;
-  padding: 0.5em 1em;
-}
+  margin: 20px 0;
+  color: #444; }
+
+/* Button */
+button {
+  padding: 16px 6px;
+  width: 100%;
+  color: dodgerblue;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  border: 2px solid dodgerblue;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s; }
+  button:hover {
+    color: white;
+    background-color: dodgerblue;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
+@media(min-width: 450px) {
+  button {
+    max-width: 200px;
+    width: 100%; } }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+
+.header, .footer {
+  padding: 1rem; }
+
+.main {
+  background-color: #ececec;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  padding: 1rem;
+  -webkit-overflow-scrolling: touch; }
+
+/*# sourceMappingURL=styles.css.map */

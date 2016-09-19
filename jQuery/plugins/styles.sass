@@ -1,0 +1,36 @@
+@import "header"
+
+*,
+*::before,
+*::after 
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+body
+	font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif
+	font-style: normal
+	font-weight: 400
+	letter-spacing: 0
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-moz-font-feature-settings: "liga" on
+
+.container
+	display: flex
+	flex-direction: column
+	height: 100vh
+
+.header,.footer
+	padding: 1rem
+
+.header
+
+.main
+	background-color: #ececec
+	flex: 1 1 auto
+	//flex: 1 0 auto // use this to implement sticky footer
+	overflow-y: scroll
+	padding: 1rem
+	-webkit-overflow-scrolling: touch
