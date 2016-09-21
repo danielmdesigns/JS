@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<title>Sticky Header Plugin</title>
+<style>
+*, *::before, *::after{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga" on;
+}
+.header{
+	background-color: dodgerblue;
+	display: block;
+	color: white;
+	width: 100%;
+	height: 100px;
+	padding: 1rem;
+	transition: 1s;
+}
+.is-sticky .header{
+	background: lightskyblue;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+.header h1{
+	font-size: 2rem;
+	font-weight: 100;
+	text-align: center;
+	line-height: 75px;
+}
+@media(max-width: 450px){
+.header h1{
+	font-size: 2rem;
+}
+}
+
+main{
+	color: #444;
+	padding: 1rem;
+}
+main p{
+	margin: 23px 0;
+}
+button{
+	padding: 16px 6px;
+	width: 100%;
+	color: dodgerblue;
+	font-weight: bold;
+	font-size: 0.75rem;
+	border-radius: 4px;
+	border: 2px solid dodgerblue;
+	background-color: transparent;
+	outline: 0;
+	cursor: pointer;
+	transition: color .2s, background-color .2s;
+}
+button:hover{
+		color: white;
+		background-color: dodgerblue;
+		box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+@media(min-width: 450px){
+button{
+		max-width: 200px;
+		width: 100%;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+	<h1>Purus Inceptos</h1>
+</div>
+
+<main>
+  <h2>Dapibus Egestas Tortor</h2>
+  <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+  <button>Sit Vestibulum Dapibus</button>
+  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.</p>
+  <p>Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+  <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.</p>
+  <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+  <p>Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.</p>
+  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</p>
+  <p>Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.</p>
+</main>
+
+<!--Most Current jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="jquery.sticky.js"></script>
+<script>
+$(".header").sticky();
+$(".header").on("sticky-start", function(){
+ $("h1").html("Fusce <strong><em>Sem</em></strong> Amet");
+});
+$(".header").on("sticky-end", function(){
+ $("h1").html("Purus Inceptos");
+});
+</script>
+
+</body>
+</html>
