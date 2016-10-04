@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mastering the DOM</title>
+<link rel="shortcut icon" href="https://goo.gl/EpW2Ku">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<form action="">
+<label for="">Name:</label>
+<input type="text"><br><br>
+<label id="email" for="">Email:</label>
+<input type="email">
+<hr>
+<div class="radio">
+  <input id="r1" type="radio" name="link"><label for="r1">Default, Checked!</label><br>
+  <input id="r2" type="radio" name="link"><label for="r2">Example 2</label><br>
+  <input id="r3" type="radio" name="link"><label for="r3">Example 3</label><br>
+</div>
+<hr>
+<div id="checkbox">
+	<input type="checkbox" id="cb1"><label for="cb1">Lorem 1</label><br>
+    <input type="checkbox" id="cb2"><label for="cb2">Lorem 2</label><br>
+    <input type="checkbox" id="cb3"><label for="cb3">Lorem 3</label><br>
+</div>
+<hr>
+<input type="submit" value="Continue">
+</form>
+
+<!--Vanilla JS-->
+<script>
+//Get checkbox div
+const checkboxes = document.getElementById("checkbox");
+//Create a new input element
+const checkOption = document.createElement("input");
+//Set the input to a type of checkbox
+checkOption.setAttribute("type", "checkbox");
+//Make the checkbox selection true, to check it by default
+checkOption.checked = true;
+//add it to the form
+checkboxes.appendChild(checkOption);
+//create a new label element
+const label = document.createElement("label");
+//give it some text
+label.innerHTML = "Lorem 4";
+//add it to the form, next to the checkbox
+checkboxes.appendChild(label);
+
+
+
+//select a radio input
+const radio = document.getElementById("r1");
+//make it checked by default
+r1.checked = true;
+</script>
+
+</body>
+</html>
