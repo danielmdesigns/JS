@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mastering the DOM</title>
+<link rel="shortcut icon" href="https://goo.gl/EpW2Ku">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1 id="title">Ridiculus Cras Sem</h1>
+
+<hr>
+
+<p>This paragraph was already here... Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+<!--Vanilla JS-->
+<script>
+//create an h1
+const h1 = document.createElement("h1");
+//give it some text
+h1.textContent = "Elit Dolor Dapibus";
+//add it to the page
+document.body.appendChild(h1);
+
+//remove an element
+//get original h1 element
+const title = document.getElementById("title");
+//remove it
+document.body.removeChild(title);
+</script>
+
+</body>
+</html>
+
+
+
+
+
