@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mastering the DOM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.sansSerif{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.fontSize{
+	font-size: 2rem;
+}
+.fontWeight{
+	font-weight: 100;
+}
+.dodgerBlue{
+	color: dodgerblue;
+}
+
+</style>
+</head>
+<body>
+
+<h1 id="title">Sollicitudin Dapibus Vulputate</h1>
+<p id="para">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+
+<!--Vanilla JS-->
+<script>
+//Select the h1 from the DOM
+const title = document.getElementById("title");
+
+//Give it a class of .sansSerif
+title.className = "sansSerif";
+
+//Include a different class into a list of exisiting classes
+title.classList.add("fontWeight");
+
+//Add multiple classes to a signle element
+title.classList.add("fontSize", "dodgerBlue");
+
+
+
+//Old, but still a way to set & add attribute.
+const para = document.getElementById("para");
+para.setAttribute("class", "sansSerif");
+</script>
+
+</body>
+</html>
