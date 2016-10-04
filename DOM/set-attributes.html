@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Mastering the DOM</title>
+<link rel="shortcut icon" href="https://goo.gl/EpW2Ku">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .sansSerif{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .fontSize{
-	font-size: 2rem;
+	font-size: 3rem;
 }
 .fontWeight{
 	font-weight: 100;
@@ -31,7 +32,7 @@
 const title = document.getElementById("title");
 
 //Give it a class of .sansSerif
-title.className = "sansSerif";
+title.className = "sansSerif"; //old
 
 //Include a different class into a list of exisiting classes
 title.classList.add("fontWeight");
@@ -39,9 +40,10 @@ title.classList.add("fontWeight");
 //Add multiple classes to a signle element
 title.classList.add("fontSize", "dodgerBlue");
 
+//Remove a class from a list
+title.classList.remove("dodgerBlue");
 
-
-//Old, but still a way to set & add attribute.
+//if does not have a class, you can give it a class this way
 const para = document.getElementById("para");
 para.setAttribute("class", "sansSerif");
 </script>
