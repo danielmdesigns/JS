@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mastering the DOM</title>
+<link rel="shortcut icon" href="https://goo.gl/EpW2Ku">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300;}
+p{padding: 20px;}
+.id{color:dodgerblue;}
+.span{color:tomato; padding:0 40px; display:block; font-style:italic;}
+.class{color:aquamarine;}
+.querySelector{color:gray;}
+.width{width:100%; padding: 10px;}
+.querySelectorAll{background:yellow; border-radius:5px;}
+.bold{font-weight:500;}
+</style>
+</head>
+<body>
+
+<p id="id">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+<span>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+<p class="class">Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
+
+<label for="input1">Label: </label><input id="input1" type="text">
+
+<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+
+<!--Vanilla JS-->
+<script>
+//Get Elements by Id
+const getId = document.getElementById("id");
+getId.classList.add("id");
+
+//Get Elements by Tag Name
+const getTagName = document.getElementsByTagName("span")[0];
+getTagName.classList.add("span");
+
+
+//Get Elements by Class Name
+const getClass = document.getElementsByClassName("class")[0];
+getClass.classList.add("class");
+
+
+//Get Elements by Query Selector
+const gs = document.querySelector("[type='text']");
+gs.classList.add("width");
+gs.previousSibling.classList.add("querySelector");
+
+
+//Get Elements by All Query Selectors
+const qsa = document.querySelectorAll("p");
+qsa[2].classList.add("querySelectorAll");
+</script>
+
+</body>
+</html>
+
+
+
+
+
