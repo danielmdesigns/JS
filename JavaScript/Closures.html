@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Understanding Closures in JavaScript</title>
+</head>
+<body>
+<h1>Closures</h1>
+<p>A function with access to its own private variables.</p>
+
+<button id="first">First</button>
+<button id="second">Second</button>
+<button id="third">Third</button>
+<script>
+//Get each of the buttons
+const buttons = document.getElementsByTagName("button");
+//Loop over each of them
+for(var i=0; i<buttons.length; i+=1){
+	const button = buttons[i];
+	const buttonName = button.innerHTML;
+	//Adding a click handler to each one
+	button.addEventListener("click", function(){
+		//...then consolin' the name of the button clicked
+		console.log(buttonName);
+	});
+}
+</script>
+
+<script>
+//Closure for button name!!!
+function createHandler(name){
+	return function(){
+		console.log(name);
+	}
+}
+
+</script>
+
+<script>
+//Variable is in the global scope
+var count = 0;
+function countBirds(){
+	count += 1;
+	return count + " birds";
+}
+function countDogs(){
+	count += 1;
+	return count + " dogs";
+}
+
+
+var birds = 3;
+function outerFunction(){
+	var privateCounter = 8;
+	function innerFunction(){
+		privateCounter += 1;
+		console.log( "Called "+ privateCounter +" times." );
+	}
+	return innerFunction;
+}
+var callFunc = outerFunction();
+//callFunc(); //call it to get result
+
+
+
+//Closure Function
+function makeCounter(noun){
+	var count = 0;
+	return function(){
+		count += 1;
+		return count +" "+ noun;
+	}
+}
+//var birdCounter = makeCounter("bird");
+//var dogCounter = makeCounter("dog");
+</script>
+
+</body>
+</html>
