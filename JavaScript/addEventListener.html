@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>addEventListener</title>
+</head>
+<body>
+
+<button id="myButton">Button by id</button>
+<a href="#">Link by tagName</a>
+
+<script>
+//getting our element by it's id attribute
+//created a separate function to use
+const myButton = document.getElementById("myButton");
+myButton.addEventListener("click", myAlert);
+function myAlert(e){
+  e.preventDefault();
+  alert("Button has been clicked.");
+}
+
+//get our element by it's tagName
+//provided the event inline
+var button = document.getElementsByTagName("a")[0];
+button.addEventListener("click",function(e){
+  e.preventDefault();
+  alert("You've just clicked the text link.");
+}, false);
+</script>
+</body>
+</html>
